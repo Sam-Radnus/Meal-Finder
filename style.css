@@ -63,6 +63,12 @@ margin-left:23%;
 }
 h2{
     margin-left:10%;
+    
+}
+abbr{
+    border-bottom: none!important;
+    cursor:inherit !important;
+    text-decoration: none !important;
 }
 div[class="food items"]
 {
@@ -86,17 +92,25 @@ div[class="food"]
     background-position: center;
     background-color: rgba(247, 239, 239, 0.5);
     background-blend-mode: lighten;
-    cursor:pointer;
-    
+    cursor:pointer; 
+    margin: auto;
+    position: relative;
+
+}
+ #first:hover img ,#second:hover img ,#third:hover img{
+    transform: scale(1.1);
 }
 img{
     border-radius: 4px;
-    width:75%;
-    height:75%;
+    margin-top:16px;
+    height:auto;
     display: block;
     margin-left: auto;
     margin-right: auto;
     width: 70%;
+    max-width: 100%;
+    transition: all 0.3s;
+    transform:scale(1);
 }
 div[class="mealName"]{
     text-align: center;
@@ -109,7 +123,98 @@ div[class="coating"]{
     justify-items: center;
     width:fit-content;
     margin-right:50px;
-    height:25vw;
+    height:27vw;
     padding-bottom: 100%;
     margin-bottom: -100%;
+}
+div[class="modal"]
+{
+    display: none;
+    position:fixed;
+    top:0;
+    left:0;
+    background-color: rgba(0,0,0,0.5);
+    height:100vh;
+    width:100%;
+}
+div[class="modal-content"]
+{
+    position: absolute;
+    height:72%;
+    width:85%;
+    background-color: whitesmoke;
+    top:10%;
+    left:8%;
+    border-radius: 15px;
+    display: flex;
+    
+    
+}
+span i{
+     position:absolute;
+     top: 1.5%;
+     left: 97.25%;
+     font-size: 25px;
+     color:red; 
+     cursor: pointer;  
+}
+h1[id="black"]
+{
+
+    color:black;
+}
+div[class="photo"]
+{
+    
+    width: 45%;
+}
+div[class="intro"]
+{
+    margin-left:5px;   
+    width: 60%;
+    overflow: scroll;
+}
+img[class="one"]
+{
+    margin:0;
+    height:72vh;
+    width:max-content;
+   
+    border-radius: 0px;
+    border-top-left-radius:15px;
+    border-bottom-left-radius:15px;
+}
+
+h2.panel,h3{
+    font-family: 'Abril Fatface', cursive;
+    font-family: 'Fredoka One', cursive;
+    font-family: 'Londrina Solid', cursive;
+    font-family: 'Patua One', cursive;
+    font-family: 'Shadows Into Light', cursive;
+    font-family: 'Signika Negative', sans-serif;
+    font-family: 'Varela Round', sans-serif;
+    color:black;
+}
+li{
+    font-family: 'Abril Fatface', cursive;
+    font-family: 'Fredoka One', cursive;
+    font-family: 'Londrina Solid', cursive;
+    font-family: 'Patua One', cursive;
+    font-family: 'Shadows Into Light', cursive;
+    font-family: 'Signika Negative', sans-serif;
+    font-family: 'Varela Round', sans-serif;
+    background-color:black;
+    color:white;
+    text-decoration: none;
+    border-color: #c13a3a;
+	background-color: rgb(214, 81, 81);
+    border-style: solid;
+    border-width: 0px 0px 3px;
+    box-shadow: 0 -1px 0 rgba(255, 255, 255, 0.1) inset;
+    color: #FFFFFF;	   
+    border-radius: 6px;
+    cursor: pointer;
+    margin:10px;
+    text-align: center;
+
 }
