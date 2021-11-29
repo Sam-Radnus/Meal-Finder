@@ -34,9 +34,11 @@ function getRandomMeal(e)
     .then(data=>{
        // console.log(data.meals[0]);
         e.innerHTML=`
-                    <img src='${data.meals[0].strMealThumb}' height="200" width="290">
-                    <div id="${data.meals[0].strMeal}" class="mealName"><abbr title="${data.meals[0].strCategory}"><h2>${data.meals[0].strMeal}</abbr></h2></div>
-                     `;
+                    <div id="${data.meals[0].strMeal}">
+                    <img id="${data.meals[0].strMeal}" src='${data.meals[0].strMealThumb}' height="200" width="290">
+                    <div id="${data.meals[0].strMeal}" class="mealName"><h2 class="panel" id="${data.meals[0].strMeal}">${data.meals[0].strMeal}</h2></div>
+                    </div>
+                    `;
                      console.log(e);
                      e.style.backgroundImage=`url('${data.meals[0].strMealThumb}')`;
                      e.style.backgroundColor=' background-color: rgba(247, 239, 239, 0.5)';
@@ -56,7 +58,7 @@ function openModal(e)
     let content=document.getElementsByClassName('intro')[0];   // div to write the content
     let photo=document.getElementsByClassName('photo')[0];     // div to place the photo
     modal.style.display='block';                               // to display the modal
-    let food=document.getElementById(e.path[1].id);            //get element by id
+    let food=document.getElementById(e.path[0].id);            //get element by id
     console.log(food);
     console.log(food.childNodes);
     mealID=food.childNodes[3].id;
@@ -80,8 +82,8 @@ function openModal(e)
         content.innerHTML=`<p></p>
         <h1 id="black">${data.meals[0].strMeal}</h1>
                             <h3>${data.meals[0].strInstructions}</h3>
-                            <h2 class="panel">Category:${data.meals[0].strCategory}</h2>
-                            <h2 class="panel">Area of Origin:${data.meals[0].strArea}</h2>
+                            <h1 id="black">Category:${data.meals[0].strCategory}</h1>
+                            <h1 id="black">Area of Origin:${data.meals[0].strArea}</h1>
                             <ul>
                                ${ingredients.map(ing=>`<li>${ing}</li>`).join('')} 
                             </ul>
@@ -116,12 +118,12 @@ function search_food()
             if(data.meals!=null)
             {
                // console.log(data.meals);
-                food_Items.innerHTML=`<h2 class="panel"> Search Results for ${mealName}`
+                food_Items.innerHTML=`<div class="center"><h1 class="center" id="black"> Search Results for ${mealName}</h1></div>`
                 list.innerHTML=data.meals
                 .map(
-                    meal=>` <div class="meal" id="${meal.idMeal}">
-                            <img class="two" src='${meal.strMealThumb}' height="200" width="290">
-                            <div id="${meal.strMeal}" class="mealName"><abbr title="${meal.strCategory}"><h2 class="mealName">${meal.strMeal}</abbr></h2></div>
+                    meal=>` <div class="meal" id="${meal.strMeal}">
+                            <img id="${meal.strMeal}"  class="two" src='${meal.strMealThumb}' height="200" width="290">
+                            <div id="${meal.strMeal}" class="mealName"><abbr title="${meal.strCategory}"><h2 id="${meal.strMeal}" class="mealName">${meal.strMeal}</abbr></h2></div>
                           </div> `
                 )
                 .join('');
@@ -137,7 +139,7 @@ function search_food()
                  }
             }
             else{
-                food_Items.innerHTML=`<h2 class="panel">  ${mealName} was not found try Soup instead
+                food_Items.innerHTML=`<h1 id="black">  ${mealName} was not found :( try Soup instead
                                       `;
             } 
     });

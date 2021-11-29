@@ -53,21 +53,21 @@ h1[id="reload"]
 {
     cursor: pointer;
 }
-h1,h2{
+h1,h2,h3,li
+{
     font-family: 'Abril Fatface', cursive;
-font-family: 'Fredoka One', cursive;
-font-family: 'Londrina Solid', cursive;
-font-family: 'Patua One', cursive;
-font-family: 'Shadows Into Light', cursive;
-font-family: 'Signika Negative', sans-serif;
-font-family: 'Varela Round', sans-serif;
+    font-family: 'Fredoka One', cursive;
+    font-family: 'Londrina Solid', cursive;
+    font-family: 'Patua One', cursive;
+    font-family: 'Shadows Into Light', cursive;
+    font-family: 'Signika Negative', sans-serif;
+    font-family: 'Varela Round', sans-serif;
+}
+h1,h2{
 color: whitesmoke;
 margin-left:23%;
 }
-h2{
-    margin-left:10%;
-    
-}
+
 abbr{
     border-bottom: none!important;
     cursor:inherit !important;
@@ -90,10 +90,16 @@ div[class="food"]
 {
     padding-top:10px;
     /* border-style:solid; */
+    background: 
+    linear-gradient(
+      to bottom,
+      rgba(0, 0, 0, 0),
+      rgba(0, 0, 0, 0.6)
+    ),;
     background-image: url('pancake-high-resolution-jpeg-2K-wallpaper-middle-size.jpg');
     background-position: center;
     background-color: rgba(247, 239, 239, 0.5);
-    background-blend-mode: lighten;
+    background-blend-mode: darken;
     cursor:pointer; 
     margin: auto;
     position: relative;
@@ -115,19 +121,27 @@ img{
     transform:scale(1);
 }
 div[class="mealName"]{
+    position: relative;
     text-align: center;
     width:100%;  
-    color:rgb(255, 255, 255);
-    background-color: rgb(17, 13, 13);
+    bottom: 0;
+    color:rgb(0, 0, 0);
+     background-color: rgb(17, 13, 13); 
     cursor:pointer;
+    padding-bottom: 0%;
 }
 div[class="coating"]{
     justify-items: center;
     width:fit-content;
-    margin-right:50px;
+    margin-right:15px;
     height:27vw;
     padding-bottom: 100%;
     margin-bottom: -100%;
+   background:linear-gradient(
+        to -bottom,
+        rgba(0, 0, 0, 0),
+        rgba(0, 0, 0, 0.6)
+      );
 }
 div[class="modal"]
 {
@@ -143,7 +157,7 @@ div[class="modal-content"]
 {
     position: absolute;
     height:72%;
-    width:85%;
+    width:86%;
     background-color: whitesmoke;
     top:10%;
     left:8%;
@@ -154,17 +168,19 @@ div[class="modal-content"]
 }
 span i{
      position:absolute;
-     top: 1.5%;
-     left: 96.25%;
+     top: 1%;
+     left: 97.6%;
      font-size: 25px;
      color:red; 
      cursor: pointer;  
+     margin-left:0px;
 }
 h1[id="black"]
 {
     
     color:black;
 }
+
 div[class="photo"]
 {
     
@@ -172,7 +188,8 @@ div[class="photo"]
 }
 div[class="intro"]
 {
-    margin-left:5px;   
+    margin-left:5px;  
+    margin-right:25px; 
     width: 60%;
     overflow: scroll;
 }
@@ -188,35 +205,35 @@ img[class="one"]
 }
 img[class="two"]
 {
-  
+    margin-top:10%;
     height:230px;
-    width:260px;
+    width:250px;
     transition: all 0.3s;
     transform:scale(1); 
+}
+div[class="center"]
+{ 
+   position: relative;
+   top:0%;
+   left:9%;
+   width:100vw;
+   
+
 }
 div:hover > img[class="two"]{
     transform: scale(1.1);
 
 }
 
-h2.panel,h3{
-    font-family: 'Abril Fatface', cursive;
-    font-family: 'Fredoka One', cursive;
-    font-family: 'Londrina Solid', cursive;
-    font-family: 'Patua One', cursive;
-    font-family: 'Shadows Into Light', cursive;
-    font-family: 'Signika Negative', sans-serif;
-    font-family: 'Varela Round', sans-serif;
-    color:black;
+h2{
+   
+  margin-left:5%;
+  color: rgb(255, 255, 255);
+  text-shadow: 0 1px 0 black;
+    
 }
 li{
-    font-family: 'Abril Fatface', cursive;
-    font-family: 'Fredoka One', cursive;
-    font-family: 'Londrina Solid', cursive;
-    font-family: 'Patua One', cursive;
-    font-family: 'Shadows Into Light', cursive;
-    font-family: 'Signika Negative', sans-serif;
-    font-family: 'Varela Round', sans-serif;
+   
     background-color:black;
     color:white;
     text-decoration: none;
@@ -238,9 +255,9 @@ li:hover{
 
 div[id="list"]
 {
-    margin-left: 5vw;
+    left:5.67%;
     display: none;
-    position: relative;
+    position: absolute;
     display: grid;
     grid-template-columns: repeat(3,1fr);
     margin-top:60vh;
@@ -251,22 +268,16 @@ div[id="list"]
 }
 div[class="meal"]
 {
-    overflow-x: auto;
+    
     background-image: url('pancake-high-resolution-jpeg-2K-wallpaper-middle-size.jpg');
     background-position: center;
     margin:15px;
     cursor:pointer;
-    height: fit-content;
+    position: relative;
     background-image: url('pancake-high-resolution-jpeg-2K-wallpaper-middle-size.jpg');
     background-position: center;
     background-color: rgba(247, 239, 239, 0.5);
     background-blend-mode: lighten;
+    padding-bottom: 0px;
 }
-h2[class="mealName"]
-{
-    position: relative;
-    margin-top:15px;
-    margin-bottom: 0;
-}
-
 
